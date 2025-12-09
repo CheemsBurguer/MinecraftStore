@@ -32,7 +32,7 @@ body{
 body{
     background-color: var(--primary);
     background-image: url("../img/dirtBackrground.jpg");
-    font-size: 1.6;
+    font-size: 1.6rem;
     line-height: 1.5;
 }
 
@@ -50,9 +50,31 @@ img{
     width: 100%;
 }
 
+
+
 .container {
     max-width: 120rem;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 150rem;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .containerProduct {
+        max-width: 150rem;
+        margin: 0 auto;
+
+    }
+
 }
 
 h1, h2, h3 {
@@ -149,6 +171,9 @@ h3 {
     .grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+
+        grid-column: 2 / 5;
+        grid-row: 2 / 4;
     }
     
 }
@@ -200,21 +225,21 @@ h3 {
     background-position: center;
 }
 
-.grapich--world1 {
+.graphic--world1 {
     grid-row: 2 / 3;
     background-image: url("../img/graphic1.jpg");
 
 
 }
 
-.grapich--world2 {
+.graphic--world2 {
     background-image: url("../img/graphic2.jpg");
     grid-row: 8 / 9;
     
 }
 
 @media (min-width: 768px) {
-    .grapich--world2 {
+    .graphic--world2 {
         grid-row: 5 / 6;
         grid-column: 2 / 4;
     }
@@ -354,4 +379,15 @@ h3 {
     color: var(--textColor2);
     border-color: var(--tertiary);
 
+}
+
+
+.filters{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.container-title {
+    grid-column: 2 / 4;
+    margin-bottom: 2rem;
 }

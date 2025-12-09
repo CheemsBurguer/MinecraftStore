@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+    <main class="containerProduct">
+
+        <h1>{{single_product.product_name}}</h1>
+
+        <div class="book">
+
+            <img src="{{ single_product.images.url }}" alt="{{single_product.product_name}} image">
+
+            <div class="book__content">
+
+                <p>{{single_product.description}}</p>
+
+                <form class="form">
+                    <select class="form__field">
+                        <option value="">Reparación</option>
+                        <option value="">-- Seleccionar Encantamiento --</option>
+                        <option value="">Irrompible</option>
+                        <option value="">Eficiencia</option>
+                        <option value="">Fortuna</option>
+                    </select>
+
+                    <input class="form__field" type="number" placeholder="cantidad" min="1" max="{{single_product.stock}}">
+
+                    {% if single_product.stock <= 0 %}
+
+                        <h2>Producto fuera de stock </h2>
+
+                    {% else %}
+
+                        <input class="form__submit" type="submit" value="Agregar al Carrito">
+
+                    {% endif %}
+                </form>
+
+            </div>
+
+        </div>
+
+{% endblock %}

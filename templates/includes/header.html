@@ -1,12 +1,12 @@
 {% load static %}
 
 <header class="header">
-        <a href="index.html">
+        <a href="{% url 'home' %}">
             <img class="header__logo" src="{% static 'img/logo.png' %}" alt="logo">
         </a>
     </header>
 
     <nav class="nav">
-        <a class="nav__link nav__link--active" href="index.html">Shop</a>
+        <a class="nav__link nav__link--active" href="{% url 'home' %}">Shop</a>
         <a class="nav__link" href="about.html">About Us</a>
     </nav>
