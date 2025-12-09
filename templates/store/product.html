@@ -34,7 +34,12 @@
 
                     {% else %}
 
-                        <input class="form__submit" type="submit" value="Agregar al Carrito">
+                        {% if in_cart %}
+                            <h2>Producto ya agregado al carrito</h2>
+                            <a href="{% url 'cart' %}" class="form__submit" type="submit"> <span class="">Ir al carrito</span> </a>
+                        {% else %}
+                            <a href="{% url 'add_cart' single_product.id %}" class="form__submit" type="submit"> <span class=""> Agregar al Carrito </span> </a>
+                        {% endif %}
 
                     {% endif %}
                 </form>
