@@ -392,3 +392,33 @@ h3 {
     grid-column: 2 / 4;
     margin-bottom: 2rem;
 }
+
+.paginatorContainer{
+    margin-top: 5rem;
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
+}
+
+.paginator{
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.paginator-nav{
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.paginator-page{
+    max-width: fit-content;
+    max-height: fit-content;
+    background-color: var(--details);
+}
+
+.disabled{
+    opacity: .6;
+    cursor: not-allowed;
+    background-color: var(--tertiary);
+    pointer-events: none;
+}
