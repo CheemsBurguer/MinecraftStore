@@ -23,7 +23,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('store/<slug:category_slug>', views.home, name="products_by_category"),
-    path('store/<slug:category_slug>/<slug:product_slug>', views.product_detail, name="product_detail"),
-    path('cart/', include('carts.urls'))
+    path('store/category/<slug:category_slug>', views.home, name="products_by_category"),
+    path('store/category/<slug:category_slug>/<slug:product_slug>', views.product_detail, name="product_detail"),
+    path('cart/', include('carts.urls')),
+    path('store/search/', views.search, name='search')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

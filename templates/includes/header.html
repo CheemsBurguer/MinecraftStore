@@ -1,13 +1,23 @@
 {% load static %}
 
 <header class="header">
-        <a href="{% url 'home' %}">
-            <img class="header__logo" src="{% static 'img/logo.png' %}" alt="logo">
-        </a>
-    </header>
+    <a href="{% url 'home' %}">
+        <img class="header__logo" src="{% static 'img/logo.png' %}" alt="logo">
+    </a>
 
-    <nav class="nav">
-        <a class="nav__link nav__link--active" href="{% url 'home' %}">Shop</a>
-        <a class="nav__link" href="#">About Us</a>
-        <a class="nav__link" href="{% url 'cart' %}">Carrito: {{cart_count}} items</a>
-    </nav>
+    
+
+</header>
+
+<div class="searchbar">
+    <form action="{% url 'search' %}">
+        <input type="text" class="searchbar-input" placeholder="Buscar productos" name="keyword">
+        <button class="searchbar-submit" type="submit" class="nav__link">Buscar</button>
+    </form>
+</div>
+
+<nav class="nav">
+    <a class="nav__link nav__link--active" href="{% url 'home' %}">Shop</a>
+    <a class="nav__link" href="#">About Us</a>
+    <a class="nav__link" href="{% url 'cart' %}">Carrito: {{cart_count}} items</a>
+</nav>
