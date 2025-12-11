@@ -22,6 +22,13 @@ class Product(models.Model):
         return self.product_name
 
 
+class VariationManager(models.Manager):
+    def colors(self):
+        return super(VariationManager, self).filter(variation_category__variation_category_name='color', is_active=True)
+    
+    def encantamiento(self):
+        return super(VariationManager, self).filter(variation_category__variation_category_name='Encantamiento', is_active=True)
+
 class VariationCategory(models.Model):
     variation_category_name = models.CharField(max_length=100)
 
@@ -35,6 +42,9 @@ class Variation(models.Model):
     variation_value = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     created_date = models.DateField(auto_now=True)
+    
+
+    objects = VariationManager()
 
     def __str__(self):
         return self.product.product_name
